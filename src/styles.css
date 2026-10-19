@@ -183,8 +183,8 @@ body { font-family: var(--font-sans); background: var(--ink); -webkit-font-smoot
 
 /* Hero */
 .hero { position: relative; min-height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
-.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line-dark) 1px, transparent 1px), linear-gradient(90deg, var(--line-dark) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse at 70% 40%, black 10%, transparent 70%); opacity: .55; }
-.hero-spot { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(500px circle at var(--mx, 70%) var(--my, 40%), oklch(1 0 0 / 7%), transparent 60%); }
+.hero-grid { display: none; }
+.hero-spot { display: none; }
 .orbit { position: absolute; right: -8vw; top: 8vh; width: min(70vw, 900px); aspect-ratio: 1; color: var(--paper); opacity: .5; pointer-events: none; }
 .orbit .spin { transform-origin: 50% 50%; animation: spin 60s linear infinite; }
 .orbit .spin-rev { transform-origin: 50% 50%; animation: spin 90s linear infinite reverse; }
