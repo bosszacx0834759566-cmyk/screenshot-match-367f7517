@@ -140,7 +140,7 @@ function Index() {
 
       {/* HERO */}
       <section id="top" ref={heroRef} onMouseMove={onMove} className="hero bg-ink">
-        <div className="hero-grid" /><div className="hero-spot" /><Orbit />
+
         <div className="site-container relative pb-10 pt-32">
           <div className="mono reveal mb-10 flex flex-wrap gap-x-8 gap-y-2 text-paper/50"><span>● Link status: nominal</span><span>Lat 13.7563° N / Lon 100.5018° E</span><Clock /></div>
           <h1 className="hero-title"><Lines lines={["Bridging", <span className="hero-sub">Space &amp; Earth.</span>]} /></h1>
