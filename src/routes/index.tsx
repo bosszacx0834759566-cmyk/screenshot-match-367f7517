@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowDown, ArrowUpRight, Plus, X } from "lucide-react";
+import { Scramble } from "@/components/Scramble";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -117,10 +118,10 @@ function Index() {
         <div className="site-container flex h-20 items-center justify-between gap-6">
           <a href="#top" aria-label="GodHeimer home" className="flex items-center gap-3"><Logo className="h-7 w-7" /><span className="brand text-xs font-bold">GODHEIMER</span></a>
           <nav aria-label="Main navigation" className="mono hidden items-center gap-10 lg:flex">
-            {nav.slice(0, 4).map(([l, id]) => <a key={id} href={`#${id}`} className="u-link">{l}</a>)}
+            {nav.slice(0, 4).map(([l, id]) => <a key={id} href={`#${id}`} className="u-link"><Scramble text={l} /></a>)}
           </nav>
           <div className="flex items-center gap-6">
-            <a href="#contact" className="mono u-link hidden sm:inline-flex">Contact <ArrowUpRight className="h-3.5 w-3.5" /></a>
+            <a href="#contact" className="mono u-link hidden sm:inline-flex"><Scramble text="Contact" /> <ArrowUpRight className="h-3.5 w-3.5" /></a>
             <Dialog.Root open={open} onOpenChange={setOpen}>
               <Dialog.Trigger className="mono flex items-center gap-3" aria-label="Open menu"><span className="hidden sm:inline">Menu</span><span className="flex flex-col gap-1.5"><span className="block h-px w-6 bg-paper" /><span className="block h-px w-6 bg-paper" /></span></Dialog.Trigger>
               <Dialog.Portal>
@@ -128,7 +129,7 @@ function Index() {
                 <Dialog.Content aria-describedby={undefined} className="site-container fixed inset-0 z-[61] flex max-w-none flex-col overflow-y-auto bg-ink pb-8 pt-6 text-paper">
                   <div className="flex h-14 items-center justify-between"><Dialog.Title className="brand flex items-center gap-3 text-xs font-bold"><Logo className="h-7 w-7" />GODHEIMER</Dialog.Title><Dialog.Close className="mono flex items-center gap-3" aria-label="Close menu">Close <X className="h-5 w-5" /></Dialog.Close></div>
                   <nav aria-label="Section navigation" className="my-auto flex flex-col py-16">
-                    {nav.map(([l, id], i) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="menu-link flex items-baseline gap-6 border-b border-line-dark py-3"><span className="mono text-paper/40">0{i + 1}</span>{l}</a>)}
+                    {nav.map(([l, id], i) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="menu-link flex items-baseline gap-6 border-b border-line-dark py-3"><span className="mono text-paper/40">0{i + 1}</span><Scramble text={l} /></a>)}
                   </nav>
                   <div className="mono flex justify-between text-paper/50"><a href="mailto:contact@godheimer.com" className="u-link">contact@godheimer.com</a><Clock /></div>
                 </Dialog.Content>
@@ -147,8 +148,8 @@ function Index() {
           <div className="mt-14 grid gap-10 border-t border-line-dark pt-8 lg:grid-cols-12">
             <p className="body-copy reveal text-paper/60 lg:col-span-5">GodHeimer Technologies builds resilient communication infrastructure between space and Earth — designed to perform even when the environment works against it.</p>
             <div className="reveal flex flex-wrap items-center gap-6 lg:col-span-6 lg:col-start-7 lg:justify-end">
-              <a href="#robertcore" className="pill mono">Discover RobertCore <ArrowUpRight className="h-4 w-4" /></a>
-              <a href="#challenge" className="mono u-link text-paper/70">Scroll <ArrowDown className="h-4 w-4" /></a>
+              <a href="#robertcore" className="pill mono"><Scramble text="Discover RobertCore" /> <ArrowUpRight className="h-4 w-4" /></a>
+              <a href="#challenge" className="mono u-link text-paper/70"><Scramble text="Scroll" /> <ArrowDown className="h-4 w-4" /></a>
             </div>
           </div>
         </div>
@@ -273,7 +274,7 @@ function Index() {
           </div>
           <a href="#top" aria-label="Back to top" className="footer-mark mt-32 block">GODHEIMER</a>
           <div className="mono mt-10 flex flex-col justify-between gap-4 border-t border-line-dark pt-6 text-paper/40 md:flex-row">
-            <span>© {new Date().getFullYear()} GodHeimer Technologies. All rights reserved.</span><Clock /><a href="#top" className="u-link">Back to top ↑</a>
+            <span>© {new Date().getFullYear()} GodHeimer Technologies. All rights reserved.</span><Clock /><a href="#top" className="u-link"><Scramble text="Back to top ↑" /></a>
           </div>
         </div>
       </footer>
