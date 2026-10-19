@@ -159,9 +159,9 @@
   --color-paper-2: var(--paper-2);
   --color-line-dark: var(--line-dark);
   --color-line-light: var(--line-light);
-  --font-display: "Archivo", "Helvetica Neue", sans-serif;
-  --font-sans: "Archivo", "Helvetica Neue", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Orbitron", sans-serif;
+  --font-sans: "Orbitron", sans-serif;
+  --font-mono: "Orbitron", sans-serif;
   --font-brand: "Orbitron", sans-serif;
 }
 html { scroll-behavior: smooth; }
